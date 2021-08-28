@@ -77,6 +77,7 @@ class BabyName:
                 return None
 
             content = response.content.decode('utf8')
+            response.connection.close()
 
             if 'Please enter another name.' in content:
                 return None
